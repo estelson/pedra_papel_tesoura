@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pedra_papel_tesoura/jogo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,48 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pedra, Papel, Tesoura',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
-      home: const MyHomePage(title: 'Pedra, Papel, Tesoura'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: const SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Pedra, Papel, Tesoura',
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      home: Jogo(),
     );
   }
 }
